@@ -13,15 +13,15 @@ export function App() {
       </header>
       <main className="content">
         <Routes>
-          <Route path="/" element={<ClientsPage />} />
-          <Route path="/new-analysis" element={<NewAnalysisPage />} />
+          <Route path="/" element={<NewAnalysisPage />} />
+          <Route path="/clients" element={<ClientsPage />} />
           <Route path="/history" element={<HistoryPage />} />
           <Route path="/result/:clientId/:date" element={<ResultDetailPage />} />
         </Routes>
       </main>
       <nav className="nav">
-        <NavLink to="/">Klienti</NavLink>
-        <NavLink to="/new-analysis">Nová analýza</NavLink>
+        <NavLink to="/">Nová analýza</NavLink>
+        <NavLink to="/clients">Klienti</NavLink>
         <NavLink to="/history">História</NavLink>
       </nav>
     </div>
