@@ -89,3 +89,8 @@ export const listAllResults = async (): Promise<DailyResult[]> => {
   const rows = await db.getAll("dailyResults");
   return rows.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
 };
+
+export const deleteDailyResult = async (id: string): Promise<void> => {
+  const db = await getDb();
+  await db.delete("dailyResults", id);
+};
