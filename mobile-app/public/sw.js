@@ -1,5 +1,5 @@
-﻿const CACHE_NAME = "fve-mobile-v1";
-const APP_SHELL = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png"];
+const CACHE_NAME = "fve-mobile-v2";
+const APP_SHELL = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./icon-180.png"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -30,11 +30,17 @@ self.addEventListener("fetch", (event) => {
         if (cached) return cached;
 
         if (event.request.mode === "navigate") {
-          const indexFallback = await caches.match("./index.html");
+          // Fallback na index.html — použijeme scope SW namiesto relatívnej cesty,
+          // pretože caches.match() vyžaduje presnú URL, nie relatívny reťazec
+          const scopeUrl = new URL("./index.html", self.registration.scope).href;
+          const indexFallback = await caches.match(scopeUrl);
           if (indexFallback) return indexFallback;
         }
 
-        throw new Error("Offline and resource not cached.");
+        return new Response("Offline a zdroj nie je v cache.", {
+          status: 503,
+          statusText: "Service Unavailable"
+        });
       })
   );
 });

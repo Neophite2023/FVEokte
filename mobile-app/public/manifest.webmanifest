@@ -1,6 +1,8 @@
-﻿{
-  "name": "FVE Mobilna Analyza",
+{
+  "id": "fve-mobile-app-v1",
+  "name": "FVE Mobilná Analýza",
   "short_name": "FVE",
+  "description": "Analýza fotovoltiky a spotreby",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
@@ -9,14 +11,22 @@
   "theme_color": "#0d3b66",
   "icons": [
     {
+      "src": "./icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
       "src": "./icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "./icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
