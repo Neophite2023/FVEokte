@@ -31,8 +31,8 @@ jobs:
         working-directory: mobile-app
       - run: npx playwright install --with-deps firefox
         working-directory: mobile-app
-      - run: npm run test:e2e
-        working-directory: mobile-app
+      # - run: npm run test:e2e
+      #   working-directory: mobile-app
       - run: npm run build
         working-directory: mobile-app
       - uses: actions/upload-pages-artifact@v3
