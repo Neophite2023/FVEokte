@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.spec
+dist/
+build/
+
+.vscode/
+.idea/
+venv/
+env/
+.env
+*.zip
+release_repo/
