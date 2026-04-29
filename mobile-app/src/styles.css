@@ -51,6 +51,7 @@ label {
   flex-direction: column;
   gap: 6px;
   font-weight: 500;
+  min-width: 0;
 }
 
 input,
@@ -58,10 +59,17 @@ select,
 button {
   width: 100%;
   max-width: 100%;
+  min-width: 0;
   box-sizing: border-box;
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #c9d7ea;
+}
+
+input[type="date"] {
+  -webkit-appearance: none;
+  appearance: none;
+  min-width: 0;
 }
 
 button {
